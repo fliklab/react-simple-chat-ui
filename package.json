@@ -1,6 +1,6 @@
 {
   "name": "react-simple-chat-ui",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "## 소개",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -48,10 +48,7 @@
     "testEnvironment": "jsdom"
   },
   "files": [
-    "dist/index.js",
-    "dist/index.d.ts",
-    "dist/index.js.map",
-    "dist/index.d.ts.map",
+    "dist",
     "README.md",
     "LICENSE"
   ]
