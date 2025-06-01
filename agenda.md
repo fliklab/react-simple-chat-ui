@@ -53,10 +53,10 @@
 - **개발 내용**: Avatar, Username, MessageText 컴포넌트 개발 (TypeScript로 재작성)
 - **완료 기준**: 각 컴포넌트가 개별적으로 렌더링되고 스타일이 적용되어야 함. TypeScript로 타입 정의 완료.
 
-### PR 2: Molecules 컴포넌트 개발
+### PR 2: Molecules 컴포넌트 개발 (완료)
 
-- **개발 내용**: ChatBubble 컴포넌트 개발
-- **완료 기준**: ChatBubble이 Atoms를 포함하여 올바르게 렌더링되어야 함
+- **개발 내용**: ChatBubble 컴포넌트 개발 (TypeScript로 재작성)
+- **완료 기준**: ChatBubble이 Atoms를 포함하여 올바르게 렌더링되어야 함. TypeScript로 타입 정의 완료.
 
 ### PR 3: Organisms 컴포넌트 개발
 
