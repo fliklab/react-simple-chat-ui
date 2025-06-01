@@ -18,6 +18,7 @@ const ChatWindow = ({ messages }) => {
           avatarSrc={msg.avatarSrc}
           username={msg.username}
           message={msg.message}
+          align={msg.align || "left"}
         />
       ))}
     </div>

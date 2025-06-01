@@ -1,7 +1,10 @@
 import React, { useState } from "react";
 import ChatWindow from "../organisms/ChatWindow";
+import { useTranslation } from "react-i18next";
 
 const ChatPage = () => {
+  const { t } = useTranslation();
+
   const [messages, setMessages] = useState([
     {
       avatarSrc: "https://via.placeholder.com/40",
@@ -25,6 +28,7 @@ const ChatPage = () => {
           avatarSrc: "https://via.placeholder.com/40",
           username: "You",
           message: inputValue,
+          align: "right",
         },
       ]);
       setInputValue("");
@@ -57,7 +61,7 @@ const ChatPage = () => {
             border: "none",
           }}
         >
-          Send
+          {t("Send")}
         </button>
       </div>
     </div>
