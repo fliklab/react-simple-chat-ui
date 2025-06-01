@@ -1,6 +1,6 @@
 {
-  "name": "npm-react-chat-ui",
-  "version": "1.0.0",
+  "name": "react-simple-chat-ui",
+  "version": "0.0.1",
   "description": "## 소개",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",

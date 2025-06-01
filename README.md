@@ -1,8 +1,8 @@
-# React Chat UI (npm-react-chat-ui)
+# React Chat UI (react-simple-chat-ui)
 
 ## 소개
 
-`npm-react-chat-ui`는 React 및 TypeScript를 기반으로 구축된 채팅 UI 컴포넌트 라이브러리입니다. 클린 코드, 관심사 분리, 유지보수성, 성능 최적화를 중점으로 설계되었습니다.
+`react-simple-chat-ui`는 React 및 TypeScript를 기반으로 구축된 채팅 UI 컴포넌트 라이브러리입니다. 클린 코드, 관심사 분리, 유지보수성, 성능 최적화를 중점으로 설계되었습니다.
 
 이 라이브러리는 TypeScript로 작성되어 타입 안정성을 제공하며, 프로젝트에 쉽게 통합하여 풍부한 채팅 기능을 구현할 수 있도록 도와줍니다.
 
@@ -19,17 +19,17 @@
 
 ## 설치
 
-프로젝트에 `npm-react-chat-ui`를 추가하려면 다음 명령을 사용하세요:
+프로젝트에 `react-simple-chat-ui`를 추가하려면 다음 명령을 사용하세요:
 
 ```bash
-pnpm add npm-react-chat-ui
+pnpm add react-simple-chat-ui
 ```
 
 또는 npm이나 yarn을 사용한다면:
 
 ```bash
-npm install npm-react-chat-ui
-yarn add npm-react-chat-ui
+npm install react-simple-chat-ui
+yarn add react-simple-chat-ui
 ```
 
 ## 사용법
@@ -40,8 +40,8 @@ yarn add npm-react-chat-ui
 
 ```tsx
 import React from "react";
-import { ChatPage } from "npm-react-chat-ui";
-import "npm-react-chat-ui/dist/index.css"; // (TODO: CSS 파일 경로 및 사용법 확정 필요)
+import { ChatPage } from "react-simple-chat-ui";
+import "react-simple-chat-ui/dist/index.css"; // (TODO: CSS 파일 경로 및 사용법 확정 필요)
 
 function App() {
   return <ChatPage />;
@@ -50,7 +50,7 @@ function App() {
 export default App;
 ```
 
-**(주의)** 현재 CSS 파일은 별도로 제공되지 않거나, 컴포넌트 내부에 인라인 스타일로 정의되어 있습니다. 향후 CSS 추출 및 사용 방식이 확정되면 위 `import 'npm-react-chat-ui/dist/index.css';` 부분은 변경될 수 있습니다.
+**(주의)** 현재 CSS 파일은 별도로 제공되지 않거나, 컴포넌트 내부에 인라인 스타일로 정의되어 있습니다. 향후 CSS 추출 및 사용 방식이 확정되면 위 `import 'react-simple-chat-ui/dist/index.css';` 부분은 변경될 수 있습니다.
 
 ### 개별 컴포넌트 사용 (예시)
 
@@ -58,8 +58,8 @@ export default App;
 
 ```tsx
 import React, { useState } from "react";
-import { ChatWindow, Message } from "npm-react-chat-ui";
-// import { ChatBubble, Avatar, Username, MessageText } from 'npm-react-chat-ui'; // 필요에 따라 더 세부적인 컴포넌트 사용
+import { ChatWindow, Message } from "react-simple-chat-ui";
+// import { ChatBubble, Avatar, Username, MessageText } from 'react-simple-chat-ui'; // 필요에 따라 더 세부적인 컴포넌트 사용
 
 function MyCustomChat() {
   const [messages, setMessages] = useState<Message[]>([
@@ -137,7 +137,7 @@ pnpm cy:open
 ## 파일 구조
 
 ```
-npm-react-chat-ui/
+react-simple-chat-ui/
 ├── dist/                      # 빌드 결과물 (JavaScript, 타입 정의)
 ├── public/                    # 개발 서버용 정적 파일 (index.html 등)
 ├── src/
