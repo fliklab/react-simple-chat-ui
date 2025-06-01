@@ -34,6 +34,9 @@ yarn add react-simple-chat-ui
 
 ## 사용법
 
+이 라이브러리의 컴포넌트들을 React 애플리케이션에 통합하여 사용할 수 있습니다.
+기본적으로 컴포넌트들은 인라인 스타일을 사용하므로, 별도의 CSS 파일을 임포트할 필요는 없습니다.
+
 ### 전체 채팅 페이지 사용
 
 가장 간단하게 채팅 UI를 추가하는 방법은 `ChatPage` 컴포넌트를 사용하는 것입니다.
@@ -41,7 +44,6 @@ yarn add react-simple-chat-ui
 ```tsx
 import React from "react";
 import { ChatPage } from "react-simple-chat-ui";
-import "react-simple-chat-ui/dist/index.css"; // (TODO: CSS 파일 경로 및 사용법 확정 필요)
 
 function App() {
   return <ChatPage />;
@@ -50,7 +52,8 @@ function App() {
 export default App;
 ```
 
-**(주의)** 현재 CSS 파일은 별도로 제공되지 않거나, 컴포넌트 내부에 인라인 스타일로 정의되어 있습니다. 향후 CSS 추출 및 사용 방식이 확정되면 위 `import 'react-simple-chat-ui/dist/index.css';` 부분은 변경될 수 있습니다.
+**(참고)** 컴포넌트들은 대부분 인라인 스타일을 통해 기본적인 스타일링을 제공합니다.
+필요에 따라 스타일을 커스터마이징하려면, 각 컴포넌트에 `style` prop을 전달하거나 CSS-in-JS 라이브러리, 또는 전역 CSS를 사용하여 덮어쓸 수 있습니다.
 
 ### 개별 컴포넌트 사용 (예시)
 
@@ -59,12 +62,17 @@ export default App;
 ```tsx
 import React, { useState } from "react";
 import { ChatWindow, Message } from "react-simple-chat-ui";
-// import { ChatBubble, Avatar, Username, MessageText } from 'react-simple-chat-ui'; // 필요에 따라 더 세부적인 컴포넌트 사용
+// import { ChatBubble, Avatar, Username, MessageText, DefaultAvatar } from 'react-simple-chat-ui'; // 필요에 따라 더 세부적인 컴포넌트 사용
 
 function MyCustomChat() {
   const [messages, setMessages] = useState<Message[]>([
-    { username: "User1", message: "Hello!", align: "left" },
-    { username: "You", message: "Hi there!", align: "right" },
+    {
+      username: "User1",
+      message: "Hello!",
+      align: "left",
+      avatarSrc: "url_to_avatar_or_empty",
+    },
+    { username: "You", message: "Hi there!", align: "right" }, // avatarSrc가 없으면 DefaultAvatar 사용
   ]);
 
   // 메시지 전송 로직 등 추가 구현
