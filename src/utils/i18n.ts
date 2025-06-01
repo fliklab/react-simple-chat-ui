@@ -1,3 +1,7 @@
+// This is an example i18next configuration for library users.
+// The library itself does not use this configuration directly.
+// Users should configure i18next in their own application and provide translations for keys like 'Send'.
+
 import i18n from "i18next";
 import { initReactI18next } from "react-i18next";
 
