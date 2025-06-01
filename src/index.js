@@ -1,11 +1,15 @@
-import React from "react";
+import React, { Suspense } from "react";
 import ReactDOM from "react-dom";
 import Avatar from "./components/atoms/Avatar";
 import Username from "./components/atoms/Username";
 import MessageText from "./components/atoms/MessageText";
 import ChatBubble from "./components/molecules/ChatBubble";
 import ChatWindow from "./components/organisms/ChatWindow";
-import ChatPage from "./components/templates/ChatPage";
+import ReactDOM from "react-dom";
+
+const LazyChatPage = React.lazy(() =>
+  import("./components/templates/ChatPage")
+);
 
 const App = () => {
   const messages = [
@@ -23,7 +27,9 @@ const App = () => {
 
   return (
     <div>
-      <ChatPage />
+      <Suspense fallback={<div>Loading...</div>}>
+        <LazyChatPage />
+      </Suspense>
     </div>
   );
 };

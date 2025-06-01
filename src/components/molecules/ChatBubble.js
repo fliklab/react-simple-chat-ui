@@ -1,4 +1,4 @@
-import React from "react";
+import React, { memo } from "react";
 import Avatar from "../atoms/Avatar";
 import Username from "../atoms/Username";
 import MessageText from "../atoms/MessageText";
@@ -28,4 +28,4 @@ const ChatBubble = ({ avatarSrc, username, message, align }) => {
   );
 };
 
-export default ChatBubble;
+export default memo(ChatBubble);
