@@ -34,7 +34,7 @@ const ChatBubble: React.FC<ChatBubbleProps> = ({
   };
 
   return (
-    <div style={bubbleStyle}>
+    <div style={bubbleStyle} data-testid="chat-bubble" data-align={align}>
       {align !== "right" &&
         (avatarSrc ? (
           <Avatar src={avatarSrc} alt={username} />

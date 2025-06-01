@@ -67,6 +67,7 @@ const ChatPage: React.FC = () => {
             color: "#fff",
             border: "none",
           }}
+          data-testid="send-message-button"
         >
           {t("Send")}
         </button>

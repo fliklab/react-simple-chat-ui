@@ -89,21 +89,31 @@
 - **완료 기준**: 개발 서버 정상 실행, 브라우저 콘솔 오류 없음, Cypress E2E 테스트 (`chat_page_spec.js`) 통과.
 - **참고 문서**: `agenda/PR_Troubleshooting_E2E_DevServer.md`
 
-### PR 8: 테스트 작성 (진행 중)
+### PR 8: 테스트 작성 (완료)
 
 - **개발 내용**: 단위 테스트 및 통합 테스트 작성
   - `Avatar`, `Username`, `MessageText` 단위 테스트 완료 (기존 완료)
   - `ChatBubble` 단위 테스트 작성 완료 (기본 아바타 로직 포함).
-  - `ChatWindow`, `ChatPage` 단위 테스트 (기존 작성된 내용 검토 및 커버리지 향상 필요)
-  - (TODO) 통합 테스트 작성
-- **완료 기준**: 모든 테스트가 성공적으로 통과해야 함
+  - `ChatWindow`, `ChatPage` 단위 테스트 완료 (기존 작성된 내용 검토 및 커버리지 향상).
+  - 통합 테스트 (`src/tests/integration/chat_flow_spec.js`) 작성 완료:
+    - 메시지 전송 및 채팅창 확인 기능 테스트.
+    - `ChatBubble` 및 `ChatPage` 컴포넌트에 `data-testid` 추가하여 테스트 안정성 확보.
+    - `cypress.config.js` 수정하여 통합 테스트 경로 추가.
+    - 트러블슈팅: 통합 테스트 실행 시 `button[type="submit"]` 선택자 오류 해결.
+- **완료 기준**: 모든 단위 테스트 및 통합 테스트가 성공적으로 통과해야 함.
 
 ### PR 6.1: 기능 개선 - 프로필 이미지 처리 (완료)
 
 - **개발 내용**: 기존 `via.placeholder.com` 외부 이미지 의존성 제거. 프로젝트 내 기본 SVG 아바타 (`DefaultAvatar.tsx`) 컴포넌트 추가 및 `ChatBubble`에 적용. `avatarSrc`가 제공되지 않을 경우 기본 SVG 아바타 표시.
 - **완료 기준**: 외부 이미지 로딩 오류 없이 프로필 이미지가 정상적으로 표시됨.
 
-### PR 9: 문서화 및 배포 준비
+### PR 9: 문서화 및 배포 준비 (완료)
 
-- **개발 내용**: README.md 업데이트, 사용자 가이드 작성, npm 패키지 배포 준비
-- **완료 기준**: 문서화가 완료되고 배포 준비가 완료되어야 함
+- **개발 내용**:
+  - `README.md` 업데이트: TypeScript 전환, pnpm 사용, 기본 아바타, 테스트 명령어, 최신 파일 구조 반영.
+  - `package.json` 업데이트: Cypress 스크립트 추가, `types` 필드 추가, `files` 필드 상세화 (배포 파일 명시), `prepare`/`prepublishOnly` 스크립트에서 `pnpm` 사용.
+  - `tsconfig.json` 업데이트: 라이브러리 빌드 옵션(`outDir`, `declaration` 등) 설정 및 `exclude` 경로 추가.
+  - `LICENSE` 파일 (ISC) 생성.
+  - `src/index.tsx`를 라이브러리 진입점으로 수정 (공개 API export, 예제 코드 제거).
+  - 빌드(`pnpm build`) 확인 및 배포될 파일 (`dist/index.js`, `dist/index.d.ts` 등) 제어.
+- **완료 기준**: 문서화가 완료되고 npm 패키지 배포를 위한 사전 준비가 완료됨.

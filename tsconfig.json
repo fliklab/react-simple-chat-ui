@@ -1,21 +1,31 @@
 {
   "compilerOptions": {
-    "target": "es5",
+    "target": "es6",
     "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": true,
-    "skipLibCheck": true,
+    "skipLibCheck": false,
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
     "strict": true,
     "forceConsistentCasingInFileNames": true,
     "noFallthroughCasesInSwitch": true,
-    "module": "esnext",
-    "moduleResolution": "node",
+    "module": "ESNext",
+    "moduleResolution": "bundler",
     "resolveJsonModule": true,
     "isolatedModules": true,
-    "noEmit": true,
     "jsx": "react-jsx",
-    "baseUrl": "."
+    "baseUrl": ".",
+    "outDir": "./dist",
+    "declaration": true,
+    "declarationMap": true,
+    "sourceMap": true
   },
-  "include": ["src"]
+  "include": ["src"],
+  "exclude": [
+    "node_modules",
+    "dist",
+    "src/**/*.test.tsx",
+    "src/**/*.spec.js",
+    "cypress"
+  ]
 }

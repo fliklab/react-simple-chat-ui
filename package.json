@@ -3,11 +3,14 @@
   "version": "1.0.0",
   "description": "## 소개",
   "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "scripts": {
     "test": "jest",
+    "test:e2e": "cypress run",
+    "cy:open": "cypress open",
     "build": "tsc",
-    "prepare": "npm run build",
-    "prepublishOnly": "npm test",
+    "prepare": "pnpm run build",
+    "prepublishOnly": "pnpm test",
     "start": "webpack serve --config webpack.config.js --mode development"
   },
   "keywords": [],
@@ -45,6 +48,11 @@
     "testEnvironment": "jsdom"
   },
   "files": [
-    "dist"
+    "dist/index.js",
+    "dist/index.d.ts",
+    "dist/index.js.map",
+    "dist/index.d.ts.map",
+    "README.md",
+    "LICENSE"
   ]
 }
