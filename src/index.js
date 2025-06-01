@@ -5,6 +5,7 @@ import Username from "./components/atoms/Username";
 import MessageText from "./components/atoms/MessageText";
 import ChatBubble from "./components/molecules/ChatBubble";
 import ChatWindow from "./components/organisms/ChatWindow";
+import ChatPage from "./components/templates/ChatPage";
 
 const App = () => {
   const messages = [
@@ -22,7 +23,7 @@ const App = () => {
 
   return (
     <div>
-      <ChatWindow messages={messages} />
+      <ChatPage />
     </div>
   );
 };
