@@ -1,17 +1,17 @@
 import React, { Suspense } from "react";
-import ReactDOM from "react-dom";
+import ReactDOM from "react-dom/client";
 import Avatar from "./components/atoms/Avatar";
 import Username from "./components/atoms/Username";
 import MessageText from "./components/atoms/MessageText";
 import ChatBubble from "./components/molecules/ChatBubble";
 import ChatWindow from "./components/organisms/ChatWindow";
-import ReactDOM from "react-dom";
+import "./utils/i18n"; // i18n 초기화
 
-const LazyChatPage = React.lazy(() =>
-  import("./components/templates/ChatPage")
+const LazyChatPage = React.lazy(
+  () => import("./components/templates/ChatPage")
 );
 
-const App = () => {
+const App: React.FC = () => {
   const messages = [
     {
       avatarSrc: "https://via.placeholder.com/40",
@@ -34,4 +34,14 @@ const App = () => {
   );
 };
 
-ReactDOM.render(<App />, document.getElementById("root"));
+const rootElement = document.getElementById("root");
+if (rootElement) {
+  const root = ReactDOM.createRoot(rootElement);
+  root.render(
+    <React.StrictMode>
+      <App />
+    </React.StrictMode>
+  );
+} else {
+  console.error("Failed to find the root element");
+}

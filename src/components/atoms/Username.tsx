@@ -1,6 +1,10 @@
 import React from "react";
 
-const Username = ({ name }) => {
+interface UsernameProps {
+  name: string;
+}
+
+const Username: React.FC<UsernameProps> = ({ name }) => {
   return <span style={{ fontWeight: "bold" }}>{name}</span>;
 };
 
