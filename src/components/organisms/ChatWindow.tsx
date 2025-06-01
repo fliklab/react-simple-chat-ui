@@ -1,7 +1,19 @@
 import React from "react";
 import ChatBubble from "../molecules/ChatBubble";
 
-const ChatWindow = ({ messages }) => {
+// Message 객체의 타입을 정의합니다.
+interface Message {
+  avatarSrc: string;
+  username: string;
+  message: string;
+  align?: "left" | "right"; // ChatBubbleProps의 align과 동일하게 optional로 설정
+}
+
+interface ChatWindowProps {
+  messages: Message[];
+}
+
+const ChatWindow: React.FC<ChatWindowProps> = ({ messages }) => {
   return (
     <div
       style={{
@@ -18,7 +30,7 @@ const ChatWindow = ({ messages }) => {
           avatarSrc={msg.avatarSrc}
           username={msg.username}
           message={msg.message}
-          align={msg.align || "left"}
+          align={msg.align} // msg 객체에 align이 있으면 전달, 없으면 ChatBubble의 기본값(left) 사용
         />
       ))}
     </div>
