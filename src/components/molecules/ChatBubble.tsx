@@ -2,9 +2,10 @@ import React, { memo } from "react";
 import Avatar from "../atoms/Avatar";
 import Username from "../atoms/Username";
 import MessageText from "../atoms/MessageText";
+import DefaultAvatar from "../atoms/DefaultAvatar";
 
 interface ChatBubbleProps {
-  avatarSrc: string;
+  avatarSrc?: string;
   username: string;
   message: string;
   align?: "left" | "right";
@@ -34,12 +35,22 @@ const ChatBubble: React.FC<ChatBubbleProps> = ({
 
   return (
     <div style={bubbleStyle}>
-      {align !== "right" && <Avatar src={avatarSrc} alt={username} />}
+      {align !== "right" &&
+        (avatarSrc ? (
+          <Avatar src={avatarSrc} alt={username} />
+        ) : (
+          <DefaultAvatar />
+        ))}
       <div style={textContainerStyle}>
         <Username name={username} />
         <MessageText text={message} />
       </div>
-      {align === "right" && <Avatar src={avatarSrc} alt={username} />}
+      {align === "right" &&
+        (avatarSrc ? (
+          <Avatar src={avatarSrc} alt={username} />
+        ) : (
+          <DefaultAvatar />
+        ))}
     </div>
   );
 };

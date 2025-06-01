@@ -3,7 +3,7 @@ import ChatBubble from "../molecules/ChatBubble";
 
 // Message 객체의 타입을 정의합니다.
 export interface Message {
-  avatarSrc: string;
+  avatarSrc?: string;
   username: string;
   message: string;
   align?: "left" | "right"; // ChatBubbleProps의 align과 동일하게 optional로 설정
