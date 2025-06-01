@@ -58,20 +58,20 @@
 - **개발 내용**: ChatBubble 컴포넌트 개발 (TypeScript로 재작성)
 - **완료 기준**: ChatBubble이 Atoms를 포함하여 올바르게 렌더링되어야 함. TypeScript로 타입 정의 완료.
 
-### PR 3: Organisms 컴포넌트 개발
+### PR 3: Organisms 컴포넌트 개발 (완료)
 
-- **개발 내용**: ChatWindow 컴포넌트 개발
-- **완료 기준**: 여러 개의 ChatBubble이 포함된 채팅 창이 올바르게 렌더링되어야 함
+- **개발 내용**: ChatWindow 컴포넌트 개발 (TypeScript로 작성 완료)
+- **완료 기준**: 여러 개의 ChatBubble이 포함된 채팅 창이 올바르게 렌더링되어야 함. TypeScript로 타입 정의 완료.
 
 ### PR 4: npm 패키지 배포 셋업
 
 - **개발 내용**: npm 패키지 배포 환경 설정 및 초기 배포 테스트
 - **완료 기준**: 패키지가 npm에 성공적으로 배포되고 설치 가능한 상태여야 함
 
-### PR 5: Templates 컴포넌트 개발
+### PR 5: Templates 컴포넌트 개발 (완료)
 
-- **개발 내용**: ChatPage 컴포넌트 개발
-- **완료 기준**: ChatWindow와 입력창이 포함된 전체 채팅 페이지가 렌더링되어야 함
+- **개발 내용**: ChatPage 컴포넌트 개발 (TypeScript로 작성 완료)
+- **완료 기준**: ChatWindow와 입력창이 포함된 전체 채팅 페이지가 렌더링되어야 함. TypeScript로 타입 정의 완료.
 
 ### PR 6: 기능 구현
 

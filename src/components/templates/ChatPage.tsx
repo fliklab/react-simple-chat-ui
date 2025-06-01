@@ -1,36 +1,37 @@
 import React, { useState } from "react";
 import ChatWindow from "../organisms/ChatWindow";
 import { useTranslation } from "react-i18next";
+import { Message } from "../organisms/ChatWindow";
 
-const ChatPage = () => {
+const ChatPage: React.FC = () => {
   const { t } = useTranslation();
 
-  const [messages, setMessages] = useState([
+  const [messages, setMessages] = useState<Message[]>([
     {
       avatarSrc: "https://via.placeholder.com/40",
       username: "John Doe",
       message: "Hello, this is a test message!",
+      align: "left",
     },
     {
       avatarSrc: "https://via.placeholder.com/40",
       username: "Jane Smith",
       message: "Hi John, nice to meet you!",
+      align: "left",
     },
   ]);
 
-  const [inputValue, setInputValue] = useState("");
+  const [inputValue, setInputValue] = useState<string>("");
 
   const handleSendMessage = () => {
     if (inputValue.trim()) {
-      setMessages([
-        ...messages,
-        {
-          avatarSrc: "https://via.placeholder.com/40",
-          username: "You",
-          message: inputValue,
-          align: "right",
-        },
-      ]);
+      const newMessage: Message = {
+        avatarSrc: "https://via.placeholder.com/40",
+        username: "You",
+        message: inputValue,
+        align: "right",
+      };
+      setMessages([...messages, newMessage]);
       setInputValue("");
     }
   };
@@ -42,13 +43,16 @@ const ChatPage = () => {
         <input
           type="text"
           value={inputValue}
-          onChange={(e) => setInputValue(e.target.value)}
+          onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
+            setInputValue(e.target.value)
+          }
           style={{
             flex: 1,
             padding: "10px",
             borderRadius: "5px",
             border: "1px solid #ccc",
           }}
+          placeholder={t("Type a message...") || "Type a message..."}
         />
         <button
           onClick={handleSendMessage}

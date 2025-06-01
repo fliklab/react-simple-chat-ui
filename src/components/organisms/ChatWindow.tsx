@@ -2,7 +2,7 @@ import React from "react";
 import ChatBubble from "../molecules/ChatBubble";
 
 // Message 객체의 타입을 정의합니다.
-interface Message {
+export interface Message {
   avatarSrc: string;
   username: string;
   message: string;
